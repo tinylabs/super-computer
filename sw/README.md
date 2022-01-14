@@ -29,3 +29,9 @@ iface usb0 inet manual
 
 # Setup NAT from usb0 <=> wlan0
 sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+# Enable packet forwarding (disable ipv6 redirects)
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo sysctl -w net.ipv4.conf.all.send_redirects=0
+sudo sysctl -w net.ipv6.conf.all.forwarding=1
+sudo sysctl -w net.ipv6.conf.all.accept_redirects=0
+sudo sysctl --system
