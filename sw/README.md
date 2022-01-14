@@ -28,3 +28,4 @@ iface usb0 inet manual
 #bridge_ports usb0 wlan0
 
 # Setup NAT from usb0 <=> wlan0
+sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
