@@ -6,6 +6,11 @@ echo 'Installing super-computer for Raspberry Pi Zero W...'
 echo 'Installing dependencies'
 sudo apt install git build-essential autoconf libtool libconfig-dev cmake dnsmasq bridge-utils
 
+# Cloning this directory
+echo 'Cloning super-computer git repo...'
+git clone https://github.com/tinylabs/super-computer.git
+cd super-computer
+
 echo 'Compiling/installing dependencies from source'
 mkdir sw/build && cd sw/build
 cmake ../
