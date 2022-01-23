@@ -1,3 +1,5 @@
+# Dependencies
+    sudo apt install git build-essential autoconf libtool libconfig-dev cmake iptables-persistent
 # Setup static IP
 # /etc/dhcpcd.conf
     interface usb0
@@ -26,6 +28,7 @@ iface usb0 inet manual
 
 # Setup NAT from usb0 <=> wlan0
     sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+    sudo iptables-save > /etc/iptables/rules.v4
 # Enable packet forwarding (disable ipv6 redirects)
     sudo sysctl -w net.ipv4.ip_forward=1 >> /etc/sysctl.d/88-sc-networking.conf
     sudo sysctl -w net.ipv4.conf.all.send_redirects=0 >> /etc/sysctl.d/88-sc-networking.conf
