@@ -17,14 +17,14 @@
     dhcp-option=option:dns-server,192.168.2.1
 
 # /etc/network/interfaces
-#auto wlan0
-allow-hotplug wlan0
-allow-hotplug usb0
-iface usb0 inet manual
+    #auto wlan0
+    allow-hotplug wlan0
+    allow-hotplug usb0
+    iface usb0 inet manual
 
-#auto br0
-#iface br0 inet dhcp
-#bridge_ports usb0 wlan0
+    #auto br0
+    #iface br0 inet dhcp
+    #bridge_ports usb0 wlan0
 
 # Setup NAT from usb0 <=> wlan0
     sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
