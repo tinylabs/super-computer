@@ -1,0 +1,13 @@
+[submodule "linux"]
+	path = linux
+	url = https://github.com/raspberrypi/linux
+	shallow = true
+[submodule "libusbgx"]
+	path = libusbgx
+	url = https://github.com/linux-usb-gadgets/libusbgx.git
+[submodule "gt"]
+	path = gt
+	url = https://github.com/linux-usb-gadgets/gt.git
+[submodule "libconfig"]
+	path = libconfig
+	url = https://github.com/hyperrealm/libconfig.git
