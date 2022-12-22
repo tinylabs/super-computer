@@ -31,7 +31,7 @@ make distclean
 PKG_CONFIG_PATH=${ROOTFS}/usr/lib/arm-linux-gnueabihf/pkgconfig \
         ./configure                                             \
         --host=arm-linux-gnueabihf                              \
-        --prefix=/usr/local                                     \
+        --prefix='=/usr/local'                                  \
         --with-sysroot=${ROOTFS}
 make clean
 make LDFLAGS="--sysroot=${ROOTFS}"
@@ -43,14 +43,16 @@ cd gt
 git co -- .
 git clean -d -f
 git submodule update
-cp ../files/armhf-toolchain.txt source
+cp ../armhf-toolchain.txt source
 cd source
-PKG_CONFIG_PATH=${ROOTFS}/usr/lib/arm-linux-gnueabihf           \
+rm -rf build
+mkdir build
+cd build
+PKG_CONFIG_PATH=${ROOTFS}/usr/local/lib/pkgconfig               \
                cmake                                            \
-               -DCMAKE_SYSROOT=${ROOTFS}                        \
-               -DCMAKE_INSTALL_PREFIX=${ROOTFS}                 \
-               -DCMAKE_RUNTIME_PREFIX=/                         \
-               -DCMAKE_TOOLCHAIN_FILE=armhf-toolchain.txt .
-make CFLAGS="--sysroot=${ROOTFS}"
-sudo make install
-
+               -DROOTFS=${ROOTFS}                               \
+               -DCMAKE_INSTALL_PREFIX=${ROOTFS}/usr/local       \
+               -DCMAKE_TOOLCHAIN_FILE=armhf-toolchain.txt ..
+make VERBOSE=1
+sudo make DESTDIR=${ROOTFS} install
+cd ../../../
