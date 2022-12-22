@@ -14,9 +14,10 @@ cd libconfig
 git co -- .
 git clean -d -f
 git submodule update
+patch -p1 --forward < ../patch/libconfig/libconfig.pc.in.patch 
 autoreconf -i
 make distclean
-./configure --host=arm-linux-gnueabihf --with-sysroot=${ROOTFS}
+./configure --host=arm-linux-gnueabihf --with-sysroot=${ROOTFS} --prefix=/usr/local
 make CFLAGS="--sysroot=${ROOTFS}"
 sudo make DESTDIR=${ROOTFS} PREFIX=/usr/local install
 cd ../
@@ -26,15 +27,16 @@ cd libusbgx
 git co -- .
 git clean -d -f
 git submodule update
+patch -p1 --forward < ../patch/libusbgx/libusbgx.pc.in.patch 
 autoreconf -i
 make distclean
-PKG_CONFIG_PATH=${ROOTFS}/usr/lib/arm-linux-gnueabihf/pkgconfig \
+PKG_CONFIG_PATH=${ROOTFS}/usr/local/lib/pkgconfig               \
         ./configure                                             \
         --host=arm-linux-gnueabihf                              \
-        --prefix='=/usr/local'                                  \
+        --prefix=/usr/local                                     \
         --with-sysroot=${ROOTFS}
 make clean
-make LDFLAGS="--sysroot=${ROOTFS}"
+make CFLAGS="--sysroot=${ROOTFS}"
 sudo make DESTDIR=${ROOTFS} PREFIX=/usr/local install
 cd ../
 

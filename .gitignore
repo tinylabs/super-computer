@@ -1,2 +1,4 @@
-sw/ext/
-sw/build/
+raspios.img
+raspios.img.xz
+supercomputer.img.xz
+

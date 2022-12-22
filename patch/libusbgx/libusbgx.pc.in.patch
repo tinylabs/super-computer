@@ -1,0 +1,10 @@
+diff --git a/libusbgx.pc.in b/libusbgx.pc.in
+index 60e4093..d447eb8 100644
+--- a/libusbgx.pc.in
++++ b/libusbgx.pc.in
+@@ -1,4 +1,4 @@
+-prefix=@prefix@
++prefix='=@prefix@'
+ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+ includedir=@includedir@

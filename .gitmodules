@@ -2,12 +2,16 @@
 	path = linux
 	url = https://github.com/raspberrypi/linux
 	shallow = true
+    ignore = dirty
 [submodule "libusbgx"]
 	path = libusbgx
 	url = https://github.com/linux-usb-gadgets/libusbgx.git
+    ignore = dirty
 [submodule "gt"]
 	path = gt
 	url = https://github.com/linux-usb-gadgets/gt.git
+    ignore = dirty
 [submodule "libconfig"]
 	path = libconfig
 	url = https://github.com/hyperrealm/libconfig.git
+    ignore = dirty

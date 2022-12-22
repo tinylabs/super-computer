@@ -53,7 +53,7 @@ git submodule update
 
 # Apply patches
 echo "Applying patches"
-for FILE in patch/kernel/*
+for FILE in ../patch/kernel/*
 do patch -p1 --forward < $FILE
 done
 
@@ -80,7 +80,7 @@ cd ../
 # Patching boot files
 echo "Patching boot files"
 for FILE in patch/fat32/*
-do patch -p1 --forward < $FILE
+do sudo patch -p1 --forward < $FILE
 done
 
 # Cleanup

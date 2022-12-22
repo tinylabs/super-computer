@@ -1,0 +1,10 @@
+diff --git a/lib/libconfig.pc.in b/lib/libconfig.pc.in
+index 4f7628b..e123450 100644
+--- a/lib/libconfig.pc.in
++++ b/lib/libconfig.pc.in
+@@ -1,4 +1,4 @@
+-prefix=@prefix@
++prefix='=@prefix@'
+ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+ includedir=@includedir@
