@@ -1,0 +1,19 @@
+--- a/patch/fat32/config.txt	2022-09-21 18:04:56.000000000 -0600
++++ b/mnt/fat32/config.txt	2022-12-22 10:48:54.884233582 -0700
+@@ -39,9 +39,9 @@
+ #arm_freq=800
+ 
+ # Uncomment some or all of these to enable the optional hardware interfaces
+-#dtparam=i2c_arm=on
++dtparam=i2c_arm=on
+ #dtparam=i2s=on
+-#dtparam=spi=on
++dtparam=spi=on
+ 
+ # Uncomment this to enable infrared communication.
+ #dtoverlay=gpio-ir,gpio_pin=17
+@@ -78,3 +78,4 @@
+ arm_boost=1
+ 
+ [all]
++dtoverlay=dwc2

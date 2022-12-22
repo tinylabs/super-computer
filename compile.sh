@@ -53,7 +53,9 @@ git submodule update
 
 # Apply patches
 echo "Applying patches"
-patch -p1 --forward < ../patches/*
+for FILE in patch/kernel/*
+do patch -p1 --forward < $FILE
+done
 
 # Compiling kernel
 echo "Configuring kernel"
@@ -77,6 +79,9 @@ cd ../
 
 # Patching boot files
 echo "Patching boot files"
+for FILE in patch/fat32/*
+do patch -p1 --forward < $FILE
+done
 
 # Cleanup
 echo "Cleaning up..."
@@ -87,7 +92,7 @@ rm -rf mnt/
 
 # Compressing resulting image
 echo "Compressing supercomputer image..."
-xz -c raspios.img > supercomputer.img.xz
+xz -4 -c raspios.img > supercomputer.img.xz
 rm raspios.img
 
 # Finished
