@@ -12,8 +12,10 @@
  
  # Uncomment this to enable infrared communication.
  #dtoverlay=gpio-ir,gpio_pin=17
-@@ -78,3 +78,4 @@
+@@ -78,3 +78,6 @@
  arm_boost=1
  
  [all]
 +dtoverlay=dwc2
++# Shutdown on toggling switch 1
++dtoverlay=gpio-shutdown,gpio_pin=21,active_low=1,gpio_pull=off

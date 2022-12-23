@@ -53,7 +53,7 @@ cd build
 PKG_CONFIG_PATH=${ROOTFS}/usr/local/lib/pkgconfig               \
                cmake                                            \
                -DROOTFS=${ROOTFS}                               \
-               -DCMAKE_INSTALL_PREFIX=${ROOTFS}/usr/local       \
+               -DCMAKE_INSTALL_PREFIX=/usr/local                \
                -DCMAKE_TOOLCHAIN_FILE=armhf-toolchain.txt ..
 make VERBOSE=1
 sudo make DESTDIR=${ROOTFS} install
