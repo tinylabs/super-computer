@@ -40,9 +40,9 @@ cd ../
 # Install usb gadget drivers
 cd libusbgx
 # Missing ltmain.sh after first one - gets copied to dir
-# above. Copy it back
+# above. Run twice to get it to configure properly
 autoreconf -i
-mv ../ltmain.sh .
+autoreconf -i
 ./configure
 make
 make install
