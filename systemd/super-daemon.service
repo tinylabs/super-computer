@@ -1,0 +1,13 @@
+[Unit]
+Description=super-daemon service for supercomputer
+After=boot-complete.target
+Wants=boot-complete.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/touch /booted
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

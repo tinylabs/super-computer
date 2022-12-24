@@ -3,3 +3,15 @@
 	url = https://github.com/raspberrypi/linux
 	shallow = true
     ignore = dirty
+[submodule "install/PaPiRus"]
+	path = install/PaPiRus
+	url = https://github.com/PiSupply/PaPiRus.git
+[submodule "install/gratis"]
+	path = install/gratis
+	url = https://github.com/repaper/gratis.git
+[submodule "install/libusbgx"]
+	path = install/libusbgx
+	url = https://github.com/linux-usb-gadgets/libusbgx.git
+[submodule "install/gt"]
+	path = install/gt
+	url = https://github.com/linux-usb-gadgets/gt.git

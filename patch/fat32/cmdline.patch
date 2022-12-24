@@ -1,5 +1,5 @@
---- a/patch/fat32/cmdline.txt	2022-09-21 18:34:06.000000000 -0600
-+++ b/mnt/fat32/cmdline.txt	2022-12-22 10:31:08.553799686 -0700
-@@ -1 +1 @@
--console=serial0,115200 console=tty1 root=PARTUUID=1d124286-02 rootfstype=ext4 fsck.repair=yes rootwait quiet init=/usr/lib/raspberrypi-sys-mods/firstboot splash plymouth.ignore-serial-consoles
-+console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 fsck.repair=yes rootwait quiet init=/usr/lib/raspberrypi-sys-mods/firstboot splash plymouth.ignore-serial-consoles modules-load=dwc2,g_ncm
+--- a/mnt/fat32/cmdline.txt	2022-09-21 18:23:40.000000000 -0600
++++ b/patch/fat32/cmdline.txt	2022-12-23 14:08:27.298268062 -0700
+@@ -1,1 +1,1 @@
+-console=serial0,115200 console=tty1 root=PARTUUID=b1214a26-02 rootfstype=ext4 fsck.repair=yes rootwait quiet init=/usr/lib/raspberrypi-sys-mods/firstboot
++console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 fsck.repair=yes rootwait modules-load=dwc2,libcomposite quiet init=/usr/lib/raspberrypi-sys-mods/firstboot
