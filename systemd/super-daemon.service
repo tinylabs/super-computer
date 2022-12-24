@@ -6,8 +6,8 @@ Wants=boot-complete.target
 [Service]
 Type=simple
 User=root
-ExecStart=/usr/bin/touch /booted
-Restart=always
+ExecStart=/opt/sc/boot.sh
+#Restart=always
 
 [Install]
 WantedBy=multi-user.target

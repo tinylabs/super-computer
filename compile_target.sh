@@ -101,6 +101,10 @@ echo "Installing supercomputer framework..."
 sudo mkdir -p mnt/ext4/opt/sc/
 sudo cp -R install/ mnt/ext4/opt/sc/
 
+# Copy boot script and logo
+sudo cp boot.sh mnt/ext4/opt/sc/
+sudo cp boot_logo.png mnt/ext4/opt/sc/
+
 # Enable services
 echo "Enabling systemd services..."
 for FILE in systemd/*; do

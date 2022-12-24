@@ -28,8 +28,6 @@ raspi-config nonint do_i2c 0
 # Install papirus
 cd PaPiRus/
 python3 setup.py install
-# Set screen size - Must do on every boot
-#papirus-set 2.0
 cd ../
 
 # Install papirus driver
@@ -41,9 +39,10 @@ cd ../
 
 # Install usb gadget drivers
 cd libusbgx
-# Missing ltmain.sh after first one
+# Missing ltmain.sh after first one - gets copied to dir
+# above. Copy it back
 autoreconf -i
-autoreconf -i
+mv ../ltmain.sh .
 ./configure
 make
 make install
@@ -57,6 +56,9 @@ cmake ../
 make
 make install
 cd ../../../
+
+# Enable ssh
+raspi-config nonint do_ssh 0
 
 # Prevent overwriting our custom kernel
 apt-mark hold raspberrypi-kernel raspberrypi-kernel-headers
