@@ -13,6 +13,7 @@ if test -f "/opt/sc/install/installed.txt"; then
     papirus-draw /opt/sc/boot_logo.png
 
     # Launch python UI
+    sc_ui
 else
     # Run setup - will automatically reboot
     /opt/sc/install/install.sh &> /opt/sc/install/install.log

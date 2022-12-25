@@ -11,7 +11,7 @@
 # - Copy debs directory back to install/debs/
 #
 sudo apt update
-for PKG in git bc i2c-tools fonts-freefont-ttf whiptail make gcc python3-pil python3-smbus python3-dateutil python3-distutils libconfig-dev libfuse-dev autoconf libtool cmake; do
+for PKG in git bc i2c-tools fonts-freefont-ttf whiptail make gcc python3-pil python3-smbus python3-dateutil python3-distutils libconfig-dev libfuse-dev autoconf libtool cmake python3-pip python3-venv python3-setuptools python3-wheel python3-build; do
     sudo apt-get install -y --download-only $PKG   
 done
 

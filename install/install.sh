@@ -57,6 +57,9 @@ make
 make install
 cd ../../../
 
+# Install ui
+pip3 install sc_ui*.whl
+
 # Enable ssh
 raspi-config nonint do_ssh 0
 

@@ -105,6 +105,16 @@ sudo cp -R install/ mnt/ext4/opt/sc/
 sudo cp boot.sh mnt/ext4/opt/sc/
 sudo cp boot_logo.png mnt/ext4/opt/sc/
 
+# Build UI framework and install
+sudo apt install python3-setuptools python3-wheel python3-build
+cd install/sc-python
+git submodule update
+sudo cp repo.list ../../mnt/ext4/opt/sc/
+cd sc_ui/
+python3 -m build .
+sudo cp dist/sc_ui*.whl ../../../mnt/ext4/opt/sc/install/
+cd ../../../
+
 # Enable services
 echo "Enabling systemd services..."
 for FILE in systemd/*; do

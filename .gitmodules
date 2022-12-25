@@ -15,3 +15,6 @@
 [submodule "install/gt"]
 	path = install/gt
 	url = https://github.com/linux-usb-gadgets/gt.git
+[submodule "install/sc-python"]
+	path = install/sc-python
+	url = https://github.com/tinylabs/sc-python.git
