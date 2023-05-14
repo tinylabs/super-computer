@@ -10,6 +10,6 @@ To use it:
   - Use the "Custom image" option and point it to the compiled supercomputer.img.xz file.  
   - Make sure to click the gear icon to configure a user and WIFI credentials.  
   
-![image1](./assets/sc3.jpeg)  
+![image1](./assets/sc2.jpeg)  
   
   
