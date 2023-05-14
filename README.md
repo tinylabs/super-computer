@@ -1,7 +1,7 @@
 Supercomputer is a raspberry pi image based on raspian for the raspberry pi zero 2 w.  
 Its purpose is to allow various standalone USB device (gadget) functionality. It requires a papirus zero hat for the UI.  
 
-!(./assets/sc1.jpeg) !(./assets/sc2.jpeg)  
+![image1](./assets/sc1.jpeg) ![image2](./assets/sc2.jpeg)  
   
 To use it:  
 - Download the git repo  
