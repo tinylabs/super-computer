@@ -102,7 +102,7 @@ sudo mkdir -p mnt/ext4/opt/sc/
 sudo cp -R install/ mnt/ext4/opt/sc/
 
 # Copy boot script and logo
-sudo cp boot.sh mnt/ext4/opt/sc/
+sudo cp scripts/boot.sh mnt/ext4/opt/sc/
 sudo cp boot_logo.png mnt/ext4/opt/sc/
 
 # Build UI framework and install
@@ -137,3 +137,5 @@ rm raspios.img
 
 # Finished
 echo "Done"
+echo "Ready to install onto SD card using rpi-imager"
+echo "Don't forget to set WIFI credentials to ssh"
